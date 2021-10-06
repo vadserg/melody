@@ -31,13 +31,6 @@ $(document).ready(function () {
     $(".counter").text(floorCounter);
   });
 
-  buttonPrimary.on("click", function () {
-    modal.addClass("is-open");
-    //$(".modal-counter").text(floorChoosen); // у нас дублирование идет через  класс "counter" в "floor-counter" и в "modal-counter"
-  });
-  modalCloseButton.on("click", function () {
-    modal.removeClass("is-open");
-  });
   
 
   counterUp.on("click", function () {
@@ -51,7 +44,7 @@ $(document).ready(function () {
       });
       $(".counter").text(floorChoosen);
       floorPath.removeClass("current-floor");
-      $(`[data-floor=${floorChoosen}]`).toggleClass("current-floor");
+      $(`[data-floor=${floorChoosen}]`).addClass("current-floor");
     }
   });
 
@@ -65,7 +58,16 @@ $(document).ready(function () {
       });
       $(".counter").text(floorChoosen);
       floorPath.removeClass("current-floor"); // сброс подсветки всех этажей
-      $(`[data-floor=${floorChoosen}]`).toggleClass("current-floor"); // подсвечиваем только выбранный стрелками этаж
+      $(`[data-floor=${floorChoosen}]`).addClass("current-floor"); // подсвечиваем только выбранный стрелками этаж
     }
   });
+
+  buttonPrimary.on("click", function () {
+    modal.addClass("is-open");
+    //$(".modal-counter").text(floorChoosen); // у нас дублирование идет через  класс "counter" в "floor-counter" и в "modal-counter"
+  });
+  modalCloseButton.on("click", function () {
+    modal.removeClass("is-open");
+  });
+  
 });
