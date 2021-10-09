@@ -75,17 +75,15 @@ $(document).ready(function () {
   
   flatPath.on("mouseover", function () {
     // подсвечиваем квартиру под указателем
-    flatPath.removeClass("current-flat");
-    flatCounter = $(this).attr("data-flat"); // текущая квартира под указателем
-    console.log(flatCounter);
+    flatPath.removeClass("current-flat"); // убираем подсветку со всех квартир
+    flatCounter = $(this).attr("data-flat"); // фиксируем номер текущей квартиры
   });
 
     flatPath.on("click", function () {
       // фиксируем выбранную квартиру при клике на ней
       //flatPath.addClass("current-flat");
-      flatCounter = $(this).attr("data-flat"); // текущая квартира под указателем
-      $(`[data-flat=${flatCounter}]`).addClass("current-flat");
-      console.log(flatCounter);
+      flatCounter = $(this).attr("data-flat"); // фиксируем номер текущей квартиры
+      $(`[data-flat=${flatCounter}]`).addClass("current-flat"); // фиксируем засветку на выбранной по клику квартире и (уходим на подробное описание квартиры)
     });
   
 
