@@ -12,6 +12,9 @@ $(document).ready(function () {
   var modalCloseButton = $(".modal-close-button");
   var buttonPrimary = $(".button-primary");
 
+  var flatPath = $(".floor-image path");
+  var flatCounter = 1;
+
   floorPath.on("mouseover", function () {
     // подсвечиваем этаж под указателем
     floorPath.removeClass("current-floor");
@@ -70,4 +73,20 @@ $(document).ready(function () {
     modal.removeClass("is-open");
   });
   
+  flatPath.on("mouseover", function () {
+    // подсвечиваем квартиру под указателем
+    flatPath.removeClass("current-flat");
+    flatCounter = $(this).attr("data-flat"); // текущая квартира под указателем
+    console.log(flatCounter);
+  });
+
+    flatPath.on("click", function () {
+      // фиксируем выбранную квартиру при клике на ней
+      //flatPath.addClass("current-flat");
+      flatCounter = $(this).attr("data-flat"); // текущая квартира под указателем
+      $(`[data-flat=${flatCounter}]`).addClass("current-flat");
+      console.log(flatCounter);
+    });
+  
+
 });

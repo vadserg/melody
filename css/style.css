@@ -182,11 +182,16 @@ path.current-floor {
   padding: 50px;
 }
 
-.flats path {
+.floor-image path {
   opacity: 0;
+  cursor: pointer;
 }
 
-.flats path:hover {
+.floor-image path:hover {
+  opacity: 1;
+}
+
+path.current-flat {
   opacity: 1;
 }
 
