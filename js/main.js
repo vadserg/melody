@@ -36,9 +36,9 @@ $(document).ready(function () {
 
   
 
-  counterUp.on("click", function () {
+  counterUp.on("click", function () {  
     // выбираем этаж выше по стрелке
-    if (floorCounter < 18) {
+    if (floorCounter < 18) { // проверяем диапазон этажей
       floorCounter++;
       floorChoosen = floorCounter.toLocaleString("en-US", {
         // формат номера этажа двузнаковый (03)
